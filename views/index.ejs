@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html ng-app="biblioApp">
+  <head>
+    <link rel="stylesheet" href="">
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body ng-controller="LibroController">
+    <h1><%= title %></h1>
+    <h4>{{titulo}}</h4><br>
+
+    <div class="panel panel-primary">
+      <div class="panel-heading">Formulario de consulta</div>
+      <div class="panel-body">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <input id="titulo" class="form-control" type="hidden" ng-model="libro._id" placeholder="Ej. El principito"><br>
+                    <div class="col-md-3">
+                        <label for="titulo">Título</label>
+                        <input id="titulo" class="form-control" type="text" ng-model="libro.titulo" placeholder="Ej. El principito"><br>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="autor">Autor</label>
+                        <input id="autor" class="form-control" type="text" ng-model="libro.autor" placeholder="Ej. Antoine de Saint"><br>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="anio">Año</label>
+                        <input id="anio" class="form-control" type="number" ng-model="libro.anio" placeholder="Ej. 1943"><br>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="genero">Género</label>
+                        <input id="genero" class="form-control" type="text" ng-model="libro.genero" placeholder="Ej. Novela"><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="btn btn-success button" ng-click="addLibro()">Guardar</button>&nbsp;&nbsp;
+        <button class="btn btn-info button" ng-click="updateLibro(libro)">Actualizar</button>
+      </div>
+    </div>
+
+    <!--Despliegue de datos-->
+    <div class="panel panel-primary">
+        <div class="panel-heading">Libros</div>
+        <div class="panel-body">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Título</th>
+                    <th>Autor</th>
+                    <th>Año</th>
+                    <th>Género</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="libro in libros" >
+                    <td>{{$index + 1}}</td>
+                    <td>{{libro.titulo}}</td>
+                    <td>{{libro.autor}}</td>
+                    <td>{{libro.anio}}</td>
+                    <td>{{libro.genero}}</td>
+                    <td>
+                        <a ng-click="findLibro(libro._id)" title="Buscar"><span class="glyphicon glyphicon-search"></span></a>&nbsp;&nbsp;&nbsp;
+                        <a ng-click="showLibro(libro._id)" title="Actualizar"><span class="glyphicon glyphicon-pencil"></span></a>&nbsp;&nbsp;
+                        <a ng-click="deleteLibro(libro._id)" title="Eliminar"><span class="glyphicon glyphicon-trash"></span></a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+  </body>
+    <!-- Scripts -->
+    <script type="text/javascript" src="/lib/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="/lib/angular/angular.js"></script>
+    <script type="text/javascript" src="/js/services/biblioService.js"></script>
+    <script type="text/javascript" src="/js/controllers/biblioController.js"></script>
+    <script type="text/javascript" src="/js/biblioApp.js"></script>
+    <script type="text/javascript" src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/lib/bootstrap/dist/css/bootstrap.min.css">
+
+  </body>
+</html>

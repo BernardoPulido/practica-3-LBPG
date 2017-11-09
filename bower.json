@@ -1,0 +1,23 @@
+{
+  "name": "practica-3-lbpg",
+  "description": "Vistas con AngularJS",
+  "main": "",
+  "authors": [
+    "Bernardo <lpulido@cicese.edu.mx>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.6",
+    "bootstrap": "^3.3.7",
+    "components-font-awesome": "^4.7.0"
+  }
+}
