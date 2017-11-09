@@ -23,3 +23,7 @@ Una vez ejecutados estos comandos, basta con iniciar npm como se muestra a conti
 ```bash
 npm start
 ```
+
+Sobre el funcionamiento de la práctica:
+
+<i class="fa fa-camera-retro"></i>
