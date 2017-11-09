@@ -26,4 +26,8 @@ npm start
 
 Sobre el funcionamiento de la práctica:
 
+```html
 <i class="fa fa-camera-retro"></i>
+```
+
+
